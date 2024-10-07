@@ -1,0 +1,1957 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>path_panning.main API documentation</title>
+<meta name="description" content="Main window for path planning application …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>path_panning.main</code></h1>
+</header>
+<section id="section-intro">
+<p>Main window for path planning application.</p>
+<p>Author: Marcel Schindhelm, Marian Friedrich</p>
+<p>Copyright: German copyright law 2021, no publication, modification, Non-Commercial, No Derivative Works</p>
+<p>Date created: 01.12.2021</p>
+<p>Date last modified: 14.12.2021</p>
+<p>Python Version: 3.9.7</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;Main window for path planning application.
+
+Author: Marcel Schindhelm, Marian Friedrich
+
+Copyright: German copyright law 2021, no publication, modification, Non-Commercial, No Derivative Works
+
+Date created: 01.12.2021
+
+Date last modified: 14.12.2021
+
+Python Version: 3.9.7
+&#34;&#34;&#34;
+
+# System imports
+import sys
+import traceback
+from copy import deepcopy
+from math import atan2, cos, pi, sin
+
+# User interface imports
+from PyQt5 import QtCore
+from PyQt5.QtCore import QPointF, Qt
+from PyQt5.QtGui import QBrush, QColor, QFont, QPainter, QPixmap
+from PyQt5.QtWidgets import QAction, QApplication, QFileDialog, QGraphicsEllipseItem, QGraphicsScene,\
+    QGraphicsTextItem, QGraphicsView, QMainWindow
+
+# Algorithm implementations
+from a_star import AStarAlgo
+
+from dijkstra import DijkstraAlgo
+
+from floyd_warshall import FloydWarshallAlgo
+
+# Map data structures and parsing
+from map_graph import MapGraph
+
+from map_parser import MapParser
+
+# Performance measurement of algorithms
+from performance_measurement import PerformanceMeasurement
+
+
+class NodeVisualization(QGraphicsEllipseItem):
+    &#34;&#34;&#34;UI Element for visualizing nodes.&#34;&#34;&#34;
+
+    # Variables for selecting the target path
+    selectedStartNodeId = -1
+    selectedEndNodeId = -1
+
+    def __init__(self, node, radius, pathSelectedCallback):
+        &#34;&#34;&#34;Initialize the Node UI Element.
+
+        Keyword arguments:
+        node -- the node of the map structure
+        radius -- the radius of the rendered circle
+        pathSelectedCallback -- mouse press callback for selecting the node
+        &#34;&#34;&#34;
+        QGraphicsEllipseItem.__init__(
+            self, node.xPos - radius,
+            node.yPos - radius,
+            radius * 2, radius * 2)
+
+        self.node = node
+        self.setBrush(QBrush(QColor(255, 255, 0, 255)))  # Fill color
+        self.setPen(QColor(0, 0, 0, 255))  # Border color
+        self.pathSelectedCallback = pathSelectedCallback
+
+    def mousePressEvent(self, event):
+        &#34;&#34;&#34;Select target path on mouse press.
+
+        Keyword arguments:
+        event -- the mouse press event from qt
+        &#34;&#34;&#34;
+        if event.button() != Qt.LeftButton:
+            return
+        if NodeVisualization.selectedStartNodeId == -1:
+            NodeVisualization.selectedStartNodeId = self.node.id
+            self.setBrush(QBrush(QColor(255, 0, 0, 255)))    # Fill color
+            return
+        elif NodeVisualization.selectedEndNodeId == -1:
+            NodeVisualization.selectedEndNodeId = self.node.id
+            self.pathSelectedCallback(
+                NodeVisualization.selectedStartNodeId,
+                NodeVisualization.selectedEndNodeId)
+            return
+        else:
+            NodeVisualization.selectedStartNodeId = -1
+            NodeVisualization.selectedEndNodeId = -1
+            self.mousePressEvent(event)
+
+
+class NodeTagVisualization(QGraphicsTextItem):
+    &#34;&#34;&#34;UI Element for map node IDs.&#34;&#34;&#34;
+
+    def __init__(self, node):
+        &#34;&#34;&#34;Initialize values of node tag ids.
+
+        Keyword arguments:
+        node -- the node from the map structure
+        &#34;&#34;&#34;
+        QGraphicsEllipseItem.__init__(self, str(node.id))
+
+        self.setPos(node.xPos - self.boundingRect().width() / 2,
+                    node.yPos - self.boundingRect().height() / 2)
+        self.setDefaultTextColor(QColor(0, 0, 0, 255))
+
+
+class GraphicsScene(QGraphicsScene):
+    &#34;&#34;&#34;Main graphic scene of the path planner.&#34;&#34;&#34;
+
+    def __init__(self, pathSelectedCallback, parent=None):
+        &#34;&#34;&#34;Initialize the graphics scene for the pathplanner.&#34;&#34;&#34;
+        QGraphicsScene.__init__(self, parent)
+        self.setSceneRect(-100, -650, 1200, 800)
+        self.opt = &#39;&#39;
+
+        self.nodeFillColor = QBrush(QColor(255, 255, 0, 255))
+        self.nodeBorderColor = QColor(0, 0, 0, 255)
+        self.edgeColor = QColor(0, 0, 0, 255)
+
+        self.radius = 15
+        self.annotationDistance = 20
+        self.mapGraph = None
+        self.arrowTipLenght = 10
+
+        self.pathSelectedCallback = pathSelectedCallback
+
+        textHint = self.addText(&#39;Select File &gt;&gt; Load (to open a Map file (.txt))&#39;)
+        textHint.setFont(QFont(&#39;Calibri&#39;, pointSize=10))
+        textHint.setScale(1.5)
+
+        x = self.width() / 2 - textHint.boundingRect().width() + self.sceneRect().x()
+        y = self.height() / 2 - textHint.boundingRect().height() / 2 + self.sceneRect().y()
+        textHint.setPos(x, y)
+
+    def setMap(self, mapGraph: MapGraph):
+        &#34;&#34;&#34;Change the currently shown map.
+
+        Keyword arguments:
+        mapGraph -- the new map data structure
+        &#34;&#34;&#34;
+        self.mapGraph = deepcopy(mapGraph)
+        self.convertMapCoordinates()
+        self.renderMap()
+
+    def setOption(self, opt):
+        &#34;&#34;&#34;Set the option of the graphics scene.&#34;&#34;&#34;
+        self.opt = opt
+
+    def renderMap(self):
+        &#34;&#34;&#34;Draw the map to the graphics scene.&#34;&#34;&#34;
+        if self.mapGraph is None:
+            return
+
+        self.clear()
+
+        for key in self.mapGraph.nodePositionDict.keys():
+            node = self.mapGraph.nodePositionDict[key]
+            self.drawMapNode(node, QBrush(QColor(255, 255, 0, 255)))
+
+        for key in self.mapGraph.edgeDict.keys():
+            startNode = self.mapGraph.nodePositionDict[key]
+            edges = self.mapGraph.edgeDict[key]
+            for edge in edges:
+                endNode = self.mapGraph.nodePositionDict[edge.endNodeId]
+                self.drawMapEdge(startNode, endNode, edge.cost, self.edgeColor)
+
+    def highLightPath(self, path, infoText=&#39;&#39;):
+        &#34;&#34;&#34;Highlight the shortest path between nodes.
+
+        Keyword arguments:
+        path -- list of node ids of the shortest path
+        infoText -- additional text (shown in the graphic scene)
+        &#34;&#34;&#34;
+        self.renderMap()
+
+        text = self.addText(str(infoText))
+        text.setDefaultTextColor(QColor(0, 0, 0, 255))
+        text.setScale(1.15)
+        text.setPos(-10, -10)
+
+        # In case no path was found, return
+        if path is None:
+            return
+
+        previousNode = None
+        i = 0
+        for nodeID in path:
+            node = self.mapGraph.nodePositionDict[nodeID]
+            if i == 0:
+                self.drawMapNode(node, QBrush(QColor(0, 0, 255, 255)))
+            elif i == len(path) - 1:
+                self.drawMapNode(node, QBrush(QColor(0, 255, 255, 255)))
+            else:
+                self.drawMapNode(node, QBrush(QColor(0, 126, 125, 255)))
+            if previousNode is not None:
+                color = QColor(0, 126, 125, 255)
+                self.drawMapEdge(previousNode, node, 0, color, drawText=False)
+            previousNode = node
+            i += 1
+
+    def convertMapCoordinates(self):
+        &#34;&#34;&#34;Convert map coordinates to start from bottom left corner.&#34;&#34;&#34;
+        for key in self.mapGraph.nodePositionDict.keys():
+            node = self.mapGraph.nodePositionDict[key]
+            node.yPos = -node.yPos
+
+    def drawMapNode(self, node, color: QColor):
+        &#34;&#34;&#34;Draw the node of a map as a circle.
+
+        Keyword arguments:
+        node -- the node from the map data
+        color -- the background color of the node
+        &#34;&#34;&#34;
+        nodeVisual = NodeVisualization(
+            node, self.radius, self.pathSelectedCallback)
+        nodeVisual.setBrush(color)
+        self.addItem(nodeVisual)
+        nodeTag = NodeTagVisualization(node)
+        self.addItem(nodeTag)
+
+    def drawMapEdge(self, startNode, endNode, cost, color: QColor, drawText=True):
+        &#34;&#34;&#34;Draw the edge of a map.
+
+        Keyword arguments:
+        startNode -- the first node from the map data
+        endNode -- the second node from the map data
+        cost -- the costs of the edge
+        color -- the color of the arrow to be drawn
+        drawText -- if true, draw the cost value
+        &#34;&#34;&#34;
+        angle = atan2(
+            endNode.yPos - startNode.yPos,
+            endNode.xPos - startNode.xPos)
+
+        # Calculate start and end point of arrow
+        startPoint = QPointF(
+            startNode.xPos + cos(angle) * self.radius,
+            startNode.yPos + sin(angle) * self.radius)
+        endPoint = QPointF(
+            endNode.xPos - cos(angle) * self.radius,
+            endNode.yPos - sin(angle) * self.radius)
+
+        self.addLine(startPoint.x(), startPoint.y(), endPoint.x(), endPoint.y(), color)
+
+        rotatedVector = QPointF(
+            cos(angle - pi / 2) * self.annotationDistance,
+            sin(angle - pi / 2) * self.annotationDistance)
+
+        weightedCenterPos = QPointF(
+            (endNode.xPos * 2 + startNode.xPos) / 3,
+            (endNode.yPos * 2 + startNode.yPos) / 3)
+
+        bottomLeftTextPos = QPointF(
+            weightedCenterPos.x() + rotatedVector.x(),
+            weightedCenterPos.y() + rotatedVector.y())
+
+        # Add arrow tips
+        arrowRotatedVector = QPointF(
+            cos(angle - 3 * pi / 4) * self.arrowTipLenght,
+            sin(angle - 3 * pi / 4) * self.arrowTipLenght)
+        arrowEndPos = QPointF(
+            endPoint.x() + arrowRotatedVector.x(),
+            endPoint.y() + arrowRotatedVector.y())
+        self.addLine(endPoint.x(), endPoint.y(), arrowEndPos.x(), arrowEndPos.y(), color)
+
+        arrowRotatedVector = QPointF(
+            cos(angle + 3 * pi / 4) * self.arrowTipLenght,
+            sin(angle + 3 * pi / 4) * self.arrowTipLenght)
+        arrowEndPos = QPointF(
+            endPoint.x() + arrowRotatedVector.x(),
+            endPoint.y() + arrowRotatedVector.y())
+        self.addLine(endPoint.x(), endPoint.y(), arrowEndPos.x(), arrowEndPos.y(), color)
+
+        if drawText:
+            text = self.addText(str(cost))
+            text.setDefaultTextColor(color)
+            text.setPos(bottomLeftTextPos.x() - text.boundingRect().width() / 2,
+                        bottomLeftTextPos.y() - text.boundingRect().height() / 2)
+
+    def pathSelectedCallback(self, startId, endNodeId):
+        &#34;&#34;&#34;Call the registered callback function.
+
+        Keyword arguments:
+        startId -- the start node id of the event callback
+        endNodeId --  the end node id of the event callback
+        &#34;&#34;&#34;
+        self.pathSelectedCallback(startId, endNodeId)
+
+    def mousePressEvent(self, event):
+        &#34;&#34;&#34;Re-render the map if path selected is reset.
+
+        Keyword arguments:
+        event -- the mouse press event from qt
+        &#34;&#34;&#34;
+        pathSelected = NodeVisualization.selectedStartNodeId != -1 \
+            and NodeVisualization.selectedEndNodeId != -1
+        if pathSelected:
+            self.renderMap()
+        super(GraphicsScene, self).mousePressEvent(event)
+
+
+class GraphicsView(QGraphicsView):
+    &#34;&#34;&#34;Graphic view of the path planning window.&#34;&#34;&#34;
+
+    def __init__(self, scene, parent=None):
+        &#34;&#34;&#34;Initialize the graphics view.
+
+        Keyword arguments:
+        scene -- the target grahic scene from qt
+        &#34;&#34;&#34;
+        QGraphicsView.__init__(self, scene, parent)
+
+        self.setRenderHints(QPainter.Antialiasing | QPainter.SmoothPixmapTransform)
+        self.startPos = None
+
+    def wheelEvent(self, event):
+        &#34;&#34;&#34;Zoom if the mouse wheel changes.
+
+        Keyword arguments:
+        event -- the mouse wheel event from qt
+        &#34;&#34;&#34;
+        scaleFactor = 1.2
+        if event.angleDelta().y() &gt; 0:
+            self.scale(scaleFactor, scaleFactor)  # Zoom in
+        else:
+            self.scale(1.0 / scaleFactor, 1.0 / scaleFactor)  # Zooming out
+        super(GraphicsView, self).wheelEvent(event)
+
+    def mousePressEvent(self, event):
+        &#34;&#34;&#34;Grab the position of the mouse.
+
+        Keyword arguments:
+        event -- the mouse press event from qt
+        &#34;&#34;&#34;
+        grabKey = event.modifiers() &amp; Qt.ControlModifier \
+            and event.button() == Qt.LeftButton \
+            or event.button() == Qt.MiddleButton
+        if grabKey:
+            self.startPos = event.pos()  # store the origin point
+        else:
+            super(GraphicsView, self).mousePressEvent(event)
+
+    def mouseMoveEvent(self, event):
+        &#34;&#34;&#34;Move view when mouse is dragged.
+
+        Keyword arguments:
+        event -- the mouse move event from qt
+        &#34;&#34;&#34;
+        if self.startPos is not None:
+            delta = self.startPos - event.pos()
+            transform = self.transform()
+            deltaX = delta.x() / transform.m11()
+            deltaY = delta.y() / transform.m22()
+            self.setSceneRect(self.sceneRect().translated(deltaX, deltaY))
+            self.startPos = event.pos()
+        else:
+            super(GraphicsView, self).mouseMoveEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        &#34;&#34;&#34;Reset start pos when the mouse is released.
+
+        Keyword arguments:
+        event -- the mouse release event from qt
+        &#34;&#34;&#34;
+        self.startPos = None
+        super(GraphicsView, self).mouseReleaseEvent(event)
+
+
+class Window(QMainWindow):
+    &#34;&#34;&#34;Main window of the pathplanner application.&#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34;Initialize the main window.&#34;&#34;&#34;
+        super().__init__()
+
+        self.mapGraph = None
+        self.title = &#39;Pathplanner&#39;
+        self.setWindowTitle(self.title)
+        self.setGeometry(100, 100, 1200, 800)
+
+        # Create grahic view/scene
+        self.scene = GraphicsScene(self.pathSelectedCallback)
+        self.graphicView = GraphicsView(self.scene, self)
+
+        self.selectedAlgorithm = None
+        self.selectableAlgorithms = [&#39;A Star&#39;, &#39;Dijkstra&#39;, &#39;Floyd-Warshall&#39;]
+
+        # Algorithm solver classes
+        self.floydWarshall = FloydWarshallAlgo()
+        self.dijkstra = DijkstraAlgo()
+        self.astar = AStarAlgo()
+
+        # creating menu bar
+        self.createMainMenu()
+        self.show()
+
+    def createMainMenu(self):
+        &#34;&#34;&#34;Generate the main menu of the window.&#34;&#34;&#34;
+        mainMenu = self.menuBar()
+        fileMenu = mainMenu.addMenu(&#39;File&#39;)
+
+        # Create action for loading maps
+        loadAction = QAction(&#39;Load&#39;, self)
+        loadAction.setShortcut(&#39;Ctrl + L&#39;)
+        fileMenu.addAction(loadAction)
+        loadAction.triggered.connect(self.openFileNameDialog)
+
+        # Create action for exporting images
+        saveAction = QAction(&#39;Export Image&#39;, self)
+        saveAction.setShortcut(&#39;Ctrl + S&#39;)
+        fileMenu.addAction(saveAction)
+        saveAction.triggered.connect(self.exportAsImage)
+
+        # Create menu with a checkable list for algorithms
+        self.algorithmsMenu = mainMenu.addMenu(&#39;Algorithms&#39;)
+        self.algorithmsMenu.triggered.connect(self.changeAlgorithm)
+
+        for i in range(0, len(self.selectableAlgorithms)):
+            algoAction = self.algorithmsMenu.addAction(
+                self.selectableAlgorithms[i])
+            algoAction.setCheckable(True)
+            if i == 0:
+                algoAction.setChecked(True)
+                self.selectedAlgorithm = self.selectableAlgorithms[i]
+
+    def changeAlgorithm(self, action):
+        &#34;&#34;&#34;Change the selected algorithm.&#34;&#34;&#34;
+        for a in self.algorithmsMenu.actions():
+            if a.text() != action.text():
+                a.setChecked(False)
+        self.selectedAlgorithm = action.text()
+
+    def exportAsImage(self):
+        &#34;&#34;&#34;Export graphic view as image (.png).&#34;&#34;&#34;
+        pixmap = QPixmap(self.graphicView.viewport().size())
+        self.graphicView.viewport().render(pixmap)
+
+        name = QFileDialog.getSaveFileName(self, &#39;Save File&#39;, &#39;&#39;, &#39;(*.png)&#39;)
+        pixmap.save(name[0])
+
+    def openFileNameDialog(self):
+        &#34;&#34;&#34;Get location of a map file and open the map.&#34;&#34;&#34;
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(
+            self,
+            &#39;Open map file&#39;, &#39;&#39;,
+            &#39;Map Files (*.txt)&#39;,
+            options=options)
+        if fileName:
+            mapParser = MapParser()
+            try:
+                self.mapGraph = mapParser.ParseMapData(fileName)
+            except AssertionError:
+                _, _, tb = sys.exc_info()
+                traceback.print_tb(tb)  # Fixed format
+                tb_info = traceback.extract_tb(tb)
+                filename, line, func, text = tb_info[-1]
+                print(f&#39;Error occurred on line {line} in map parser: {text}&#39;)
+                return
+            self.scene.setMap(self.mapGraph)
+
+    def resizeEvent(self, event):
+        &#34;&#34;&#34;Resize graphic view.
+
+        Keyword arguments:
+        event -- the window resize event from qt
+        &#34;&#34;&#34;
+        self.graphicView.setGeometry(
+            0, 0,
+            self.frameGeometry().width(),
+            self.frameGeometry().height())
+
+    def keyPressEvent(self, event):
+        &#34;&#34;&#34;React to keyboard input.
+
+        Keyword arguments:
+        event -- the key press event from qt
+        &#34;&#34;&#34;
+        # Switch between fullscreen and windowed mode
+        if event.key() == QtCore.Qt.Key_F11 or event.key() == QtCore.Qt.Key_F:
+            if self.isFullScreen():
+                self.showNormal()
+            else:
+                self.showFullScreen()
+        # Re-render the map on escape key
+        if event.key() == QtCore.Qt.Key_Escape:
+            self.scene.renderMap()
+
+    def pathSelectedCallback(self, startId, endId):
+        &#34;&#34;&#34;Run the path planning when both nodes are selected.
+
+        It finds the shortest path between startId and endID with
+        the selected algorithm.
+
+        Keyword arguments:
+        startId -- the start node identifier
+        endId -- the end node identifier
+        &#34;&#34;&#34;
+        if self.selectedAlgorithm == &#39;A Star&#39;:
+            # Measure time as well
+            path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+                self.astar.solveAlgoritm, startId, endId, self.mapGraph)
+
+            if path is None:
+                infoText = &#39;No path found. (A* took %d micro seconds)&#39;
+            else:
+                infoText = &#39;A* took %d micro seconds to find a path.&#39;
+
+            self.scene.highLightPath(path, infoText % (elapsedTime))
+        elif self.selectedAlgorithm == &#39;Dijkstra&#39;:
+            # Measure time as well
+            path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+                self.dijkstra.solveAlgoritm, startId, endId, self.mapGraph)
+
+            if path is None:
+                infoText = &#39;No path found. (Dijkstra took %d micro seconds)&#39;
+            else:
+                infoText = &#39;Dijkstra took %d micro seconds to find a path.&#39;
+
+            self.scene.highLightPath(path, infoText % (elapsedTime))
+        elif self.selectedAlgorithm == &#39;Floyd-Warshall&#39;:
+            # Measure time as well
+            path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+                self.floydWarshall.solveAlgoritm,
+                startId, endId,
+                self.mapGraph)
+
+            if path is None:
+                infoText = &#39;No path found. (Floyd Warshall took %d micro seconds)&#39;
+            else:
+                infoText = &#39;Floyd Warshall took %d micro seconds to find a path.&#39;
+
+            self.scene.highLightPath(path, infoText % (elapsedTime))
+        else:
+            # TODO: ADD OTHER ALGORITHMS HERE
+            infoText = &#39;Algorithm not implemented&#39;
+            print(infoText)
+            self.scene.highLightPath([], infoText)
+
+
+def main():
+    &#34;&#34;&#34;Start the user interface application.&#34;&#34;&#34;
+    App = QApplication(sys.argv)
+    window = Window()
+    window  # prevent unused variable
+    sys.exit(App.exec())
+
+
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="path_panning.main.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Start the user interface application.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main():
+    &#34;&#34;&#34;Start the user interface application.&#34;&#34;&#34;
+    App = QApplication(sys.argv)
+    window = Window()
+    window  # prevent unused variable
+    sys.exit(App.exec())</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="path_panning.main.GraphicsScene"><code class="flex name class">
+<span>class <span class="ident">GraphicsScene</span></span>
+<span>(</span><span>pathSelectedCallback, parent=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main graphic scene of the path planner.</p>
+<p>Initialize the graphics scene for the pathplanner.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GraphicsScene(QGraphicsScene):
+    &#34;&#34;&#34;Main graphic scene of the path planner.&#34;&#34;&#34;
+
+    def __init__(self, pathSelectedCallback, parent=None):
+        &#34;&#34;&#34;Initialize the graphics scene for the pathplanner.&#34;&#34;&#34;
+        QGraphicsScene.__init__(self, parent)
+        self.setSceneRect(-100, -650, 1200, 800)
+        self.opt = &#39;&#39;
+
+        self.nodeFillColor = QBrush(QColor(255, 255, 0, 255))
+        self.nodeBorderColor = QColor(0, 0, 0, 255)
+        self.edgeColor = QColor(0, 0, 0, 255)
+
+        self.radius = 15
+        self.annotationDistance = 20
+        self.mapGraph = None
+        self.arrowTipLenght = 10
+
+        self.pathSelectedCallback = pathSelectedCallback
+
+        textHint = self.addText(&#39;Select File &gt;&gt; Load (to open a Map file (.txt))&#39;)
+        textHint.setFont(QFont(&#39;Calibri&#39;, pointSize=10))
+        textHint.setScale(1.5)
+
+        x = self.width() / 2 - textHint.boundingRect().width() + self.sceneRect().x()
+        y = self.height() / 2 - textHint.boundingRect().height() / 2 + self.sceneRect().y()
+        textHint.setPos(x, y)
+
+    def setMap(self, mapGraph: MapGraph):
+        &#34;&#34;&#34;Change the currently shown map.
+
+        Keyword arguments:
+        mapGraph -- the new map data structure
+        &#34;&#34;&#34;
+        self.mapGraph = deepcopy(mapGraph)
+        self.convertMapCoordinates()
+        self.renderMap()
+
+    def setOption(self, opt):
+        &#34;&#34;&#34;Set the option of the graphics scene.&#34;&#34;&#34;
+        self.opt = opt
+
+    def renderMap(self):
+        &#34;&#34;&#34;Draw the map to the graphics scene.&#34;&#34;&#34;
+        if self.mapGraph is None:
+            return
+
+        self.clear()
+
+        for key in self.mapGraph.nodePositionDict.keys():
+            node = self.mapGraph.nodePositionDict[key]
+            self.drawMapNode(node, QBrush(QColor(255, 255, 0, 255)))
+
+        for key in self.mapGraph.edgeDict.keys():
+            startNode = self.mapGraph.nodePositionDict[key]
+            edges = self.mapGraph.edgeDict[key]
+            for edge in edges:
+                endNode = self.mapGraph.nodePositionDict[edge.endNodeId]
+                self.drawMapEdge(startNode, endNode, edge.cost, self.edgeColor)
+
+    def highLightPath(self, path, infoText=&#39;&#39;):
+        &#34;&#34;&#34;Highlight the shortest path between nodes.
+
+        Keyword arguments:
+        path -- list of node ids of the shortest path
+        infoText -- additional text (shown in the graphic scene)
+        &#34;&#34;&#34;
+        self.renderMap()
+
+        text = self.addText(str(infoText))
+        text.setDefaultTextColor(QColor(0, 0, 0, 255))
+        text.setScale(1.15)
+        text.setPos(-10, -10)
+
+        # In case no path was found, return
+        if path is None:
+            return
+
+        previousNode = None
+        i = 0
+        for nodeID in path:
+            node = self.mapGraph.nodePositionDict[nodeID]
+            if i == 0:
+                self.drawMapNode(node, QBrush(QColor(0, 0, 255, 255)))
+            elif i == len(path) - 1:
+                self.drawMapNode(node, QBrush(QColor(0, 255, 255, 255)))
+            else:
+                self.drawMapNode(node, QBrush(QColor(0, 126, 125, 255)))
+            if previousNode is not None:
+                color = QColor(0, 126, 125, 255)
+                self.drawMapEdge(previousNode, node, 0, color, drawText=False)
+            previousNode = node
+            i += 1
+
+    def convertMapCoordinates(self):
+        &#34;&#34;&#34;Convert map coordinates to start from bottom left corner.&#34;&#34;&#34;
+        for key in self.mapGraph.nodePositionDict.keys():
+            node = self.mapGraph.nodePositionDict[key]
+            node.yPos = -node.yPos
+
+    def drawMapNode(self, node, color: QColor):
+        &#34;&#34;&#34;Draw the node of a map as a circle.
+
+        Keyword arguments:
+        node -- the node from the map data
+        color -- the background color of the node
+        &#34;&#34;&#34;
+        nodeVisual = NodeVisualization(
+            node, self.radius, self.pathSelectedCallback)
+        nodeVisual.setBrush(color)
+        self.addItem(nodeVisual)
+        nodeTag = NodeTagVisualization(node)
+        self.addItem(nodeTag)
+
+    def drawMapEdge(self, startNode, endNode, cost, color: QColor, drawText=True):
+        &#34;&#34;&#34;Draw the edge of a map.
+
+        Keyword arguments:
+        startNode -- the first node from the map data
+        endNode -- the second node from the map data
+        cost -- the costs of the edge
+        color -- the color of the arrow to be drawn
+        drawText -- if true, draw the cost value
+        &#34;&#34;&#34;
+        angle = atan2(
+            endNode.yPos - startNode.yPos,
+            endNode.xPos - startNode.xPos)
+
+        # Calculate start and end point of arrow
+        startPoint = QPointF(
+            startNode.xPos + cos(angle) * self.radius,
+            startNode.yPos + sin(angle) * self.radius)
+        endPoint = QPointF(
+            endNode.xPos - cos(angle) * self.radius,
+            endNode.yPos - sin(angle) * self.radius)
+
+        self.addLine(startPoint.x(), startPoint.y(), endPoint.x(), endPoint.y(), color)
+
+        rotatedVector = QPointF(
+            cos(angle - pi / 2) * self.annotationDistance,
+            sin(angle - pi / 2) * self.annotationDistance)
+
+        weightedCenterPos = QPointF(
+            (endNode.xPos * 2 + startNode.xPos) / 3,
+            (endNode.yPos * 2 + startNode.yPos) / 3)
+
+        bottomLeftTextPos = QPointF(
+            weightedCenterPos.x() + rotatedVector.x(),
+            weightedCenterPos.y() + rotatedVector.y())
+
+        # Add arrow tips
+        arrowRotatedVector = QPointF(
+            cos(angle - 3 * pi / 4) * self.arrowTipLenght,
+            sin(angle - 3 * pi / 4) * self.arrowTipLenght)
+        arrowEndPos = QPointF(
+            endPoint.x() + arrowRotatedVector.x(),
+            endPoint.y() + arrowRotatedVector.y())
+        self.addLine(endPoint.x(), endPoint.y(), arrowEndPos.x(), arrowEndPos.y(), color)
+
+        arrowRotatedVector = QPointF(
+            cos(angle + 3 * pi / 4) * self.arrowTipLenght,
+            sin(angle + 3 * pi / 4) * self.arrowTipLenght)
+        arrowEndPos = QPointF(
+            endPoint.x() + arrowRotatedVector.x(),
+            endPoint.y() + arrowRotatedVector.y())
+        self.addLine(endPoint.x(), endPoint.y(), arrowEndPos.x(), arrowEndPos.y(), color)
+
+        if drawText:
+            text = self.addText(str(cost))
+            text.setDefaultTextColor(color)
+            text.setPos(bottomLeftTextPos.x() - text.boundingRect().width() / 2,
+                        bottomLeftTextPos.y() - text.boundingRect().height() / 2)
+
+    def pathSelectedCallback(self, startId, endNodeId):
+        &#34;&#34;&#34;Call the registered callback function.
+
+        Keyword arguments:
+        startId -- the start node id of the event callback
+        endNodeId --  the end node id of the event callback
+        &#34;&#34;&#34;
+        self.pathSelectedCallback(startId, endNodeId)
+
+    def mousePressEvent(self, event):
+        &#34;&#34;&#34;Re-render the map if path selected is reset.
+
+        Keyword arguments:
+        event -- the mouse press event from qt
+        &#34;&#34;&#34;
+        pathSelected = NodeVisualization.selectedStartNodeId != -1 \
+            and NodeVisualization.selectedEndNodeId != -1
+        if pathSelected:
+            self.renderMap()
+        super(GraphicsScene, self).mousePressEvent(event)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QGraphicsScene</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="path_panning.main.GraphicsScene.convertMapCoordinates"><code class="name flex">
+<span>def <span class="ident">convertMapCoordinates</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert map coordinates to start from bottom left corner.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convertMapCoordinates(self):
+    &#34;&#34;&#34;Convert map coordinates to start from bottom left corner.&#34;&#34;&#34;
+    for key in self.mapGraph.nodePositionDict.keys():
+        node = self.mapGraph.nodePositionDict[key]
+        node.yPos = -node.yPos</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.drawMapEdge"><code class="name flex">
+<span>def <span class="ident">drawMapEdge</span></span>(<span>self, startNode, endNode, cost, color: PyQt5.QtGui.QColor, drawText=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw the edge of a map.</p>
+<p>Keyword arguments:
+startNode &ndash; the first node from the map data
+endNode &ndash; the second node from the map data
+cost &ndash; the costs of the edge
+color &ndash; the color of the arrow to be drawn
+drawText &ndash; if true, draw the cost value</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drawMapEdge(self, startNode, endNode, cost, color: QColor, drawText=True):
+    &#34;&#34;&#34;Draw the edge of a map.
+
+    Keyword arguments:
+    startNode -- the first node from the map data
+    endNode -- the second node from the map data
+    cost -- the costs of the edge
+    color -- the color of the arrow to be drawn
+    drawText -- if true, draw the cost value
+    &#34;&#34;&#34;
+    angle = atan2(
+        endNode.yPos - startNode.yPos,
+        endNode.xPos - startNode.xPos)
+
+    # Calculate start and end point of arrow
+    startPoint = QPointF(
+        startNode.xPos + cos(angle) * self.radius,
+        startNode.yPos + sin(angle) * self.radius)
+    endPoint = QPointF(
+        endNode.xPos - cos(angle) * self.radius,
+        endNode.yPos - sin(angle) * self.radius)
+
+    self.addLine(startPoint.x(), startPoint.y(), endPoint.x(), endPoint.y(), color)
+
+    rotatedVector = QPointF(
+        cos(angle - pi / 2) * self.annotationDistance,
+        sin(angle - pi / 2) * self.annotationDistance)
+
+    weightedCenterPos = QPointF(
+        (endNode.xPos * 2 + startNode.xPos) / 3,
+        (endNode.yPos * 2 + startNode.yPos) / 3)
+
+    bottomLeftTextPos = QPointF(
+        weightedCenterPos.x() + rotatedVector.x(),
+        weightedCenterPos.y() + rotatedVector.y())
+
+    # Add arrow tips
+    arrowRotatedVector = QPointF(
+        cos(angle - 3 * pi / 4) * self.arrowTipLenght,
+        sin(angle - 3 * pi / 4) * self.arrowTipLenght)
+    arrowEndPos = QPointF(
+        endPoint.x() + arrowRotatedVector.x(),
+        endPoint.y() + arrowRotatedVector.y())
+    self.addLine(endPoint.x(), endPoint.y(), arrowEndPos.x(), arrowEndPos.y(), color)
+
+    arrowRotatedVector = QPointF(
+        cos(angle + 3 * pi / 4) * self.arrowTipLenght,
+        sin(angle + 3 * pi / 4) * self.arrowTipLenght)
+    arrowEndPos = QPointF(
+        endPoint.x() + arrowRotatedVector.x(),
+        endPoint.y() + arrowRotatedVector.y())
+    self.addLine(endPoint.x(), endPoint.y(), arrowEndPos.x(), arrowEndPos.y(), color)
+
+    if drawText:
+        text = self.addText(str(cost))
+        text.setDefaultTextColor(color)
+        text.setPos(bottomLeftTextPos.x() - text.boundingRect().width() / 2,
+                    bottomLeftTextPos.y() - text.boundingRect().height() / 2)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.drawMapNode"><code class="name flex">
+<span>def <span class="ident">drawMapNode</span></span>(<span>self, node, color: PyQt5.QtGui.QColor)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw the node of a map as a circle.</p>
+<p>Keyword arguments:
+node &ndash; the node from the map data
+color &ndash; the background color of the node</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drawMapNode(self, node, color: QColor):
+    &#34;&#34;&#34;Draw the node of a map as a circle.
+
+    Keyword arguments:
+    node -- the node from the map data
+    color -- the background color of the node
+    &#34;&#34;&#34;
+    nodeVisual = NodeVisualization(
+        node, self.radius, self.pathSelectedCallback)
+    nodeVisual.setBrush(color)
+    self.addItem(nodeVisual)
+    nodeTag = NodeTagVisualization(node)
+    self.addItem(nodeTag)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.highLightPath"><code class="name flex">
+<span>def <span class="ident">highLightPath</span></span>(<span>self, path, infoText='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Highlight the shortest path between nodes.</p>
+<p>Keyword arguments:
+path &ndash; list of node ids of the shortest path
+infoText &ndash; additional text (shown in the graphic scene)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def highLightPath(self, path, infoText=&#39;&#39;):
+    &#34;&#34;&#34;Highlight the shortest path between nodes.
+
+    Keyword arguments:
+    path -- list of node ids of the shortest path
+    infoText -- additional text (shown in the graphic scene)
+    &#34;&#34;&#34;
+    self.renderMap()
+
+    text = self.addText(str(infoText))
+    text.setDefaultTextColor(QColor(0, 0, 0, 255))
+    text.setScale(1.15)
+    text.setPos(-10, -10)
+
+    # In case no path was found, return
+    if path is None:
+        return
+
+    previousNode = None
+    i = 0
+    for nodeID in path:
+        node = self.mapGraph.nodePositionDict[nodeID]
+        if i == 0:
+            self.drawMapNode(node, QBrush(QColor(0, 0, 255, 255)))
+        elif i == len(path) - 1:
+            self.drawMapNode(node, QBrush(QColor(0, 255, 255, 255)))
+        else:
+            self.drawMapNode(node, QBrush(QColor(0, 126, 125, 255)))
+        if previousNode is not None:
+            color = QColor(0, 126, 125, 255)
+            self.drawMapEdge(previousNode, node, 0, color, drawText=False)
+        previousNode = node
+        i += 1</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.mousePressEvent"><code class="name flex">
+<span>def <span class="ident">mousePressEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Re-render the map if path selected is reset.</p>
+<p>Keyword arguments:
+event &ndash; the mouse press event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mousePressEvent(self, event):
+    &#34;&#34;&#34;Re-render the map if path selected is reset.
+
+    Keyword arguments:
+    event -- the mouse press event from qt
+    &#34;&#34;&#34;
+    pathSelected = NodeVisualization.selectedStartNodeId != -1 \
+        and NodeVisualization.selectedEndNodeId != -1
+    if pathSelected:
+        self.renderMap()
+    super(GraphicsScene, self).mousePressEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.pathSelectedCallback"><code class="name flex">
+<span>def <span class="ident">pathSelectedCallback</span></span>(<span>self, startId, endNodeId)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Call the registered callback function.</p>
+<p>Keyword arguments:
+startId &ndash; the start node id of the event callback
+endNodeId &ndash;
+the end node id of the event callback</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pathSelectedCallback(self, startId, endNodeId):
+    &#34;&#34;&#34;Call the registered callback function.
+
+    Keyword arguments:
+    startId -- the start node id of the event callback
+    endNodeId --  the end node id of the event callback
+    &#34;&#34;&#34;
+    self.pathSelectedCallback(startId, endNodeId)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.renderMap"><code class="name flex">
+<span>def <span class="ident">renderMap</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw the map to the graphics scene.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def renderMap(self):
+    &#34;&#34;&#34;Draw the map to the graphics scene.&#34;&#34;&#34;
+    if self.mapGraph is None:
+        return
+
+    self.clear()
+
+    for key in self.mapGraph.nodePositionDict.keys():
+        node = self.mapGraph.nodePositionDict[key]
+        self.drawMapNode(node, QBrush(QColor(255, 255, 0, 255)))
+
+    for key in self.mapGraph.edgeDict.keys():
+        startNode = self.mapGraph.nodePositionDict[key]
+        edges = self.mapGraph.edgeDict[key]
+        for edge in edges:
+            endNode = self.mapGraph.nodePositionDict[edge.endNodeId]
+            self.drawMapEdge(startNode, endNode, edge.cost, self.edgeColor)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.setMap"><code class="name flex">
+<span>def <span class="ident">setMap</span></span>(<span>self, mapGraph: map_graph.MapGraph)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Change the currently shown map.</p>
+<p>Keyword arguments:
+mapGraph &ndash; the new map data structure</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setMap(self, mapGraph: MapGraph):
+    &#34;&#34;&#34;Change the currently shown map.
+
+    Keyword arguments:
+    mapGraph -- the new map data structure
+    &#34;&#34;&#34;
+    self.mapGraph = deepcopy(mapGraph)
+    self.convertMapCoordinates()
+    self.renderMap()</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsScene.setOption"><code class="name flex">
+<span>def <span class="ident">setOption</span></span>(<span>self, opt)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the option of the graphics scene.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setOption(self, opt):
+    &#34;&#34;&#34;Set the option of the graphics scene.&#34;&#34;&#34;
+    self.opt = opt</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="path_panning.main.GraphicsView"><code class="flex name class">
+<span>class <span class="ident">GraphicsView</span></span>
+<span>(</span><span>scene, parent=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Graphic view of the path planning window.</p>
+<p>Initialize the graphics view.</p>
+<p>Keyword arguments:
+scene &ndash; the target grahic scene from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GraphicsView(QGraphicsView):
+    &#34;&#34;&#34;Graphic view of the path planning window.&#34;&#34;&#34;
+
+    def __init__(self, scene, parent=None):
+        &#34;&#34;&#34;Initialize the graphics view.
+
+        Keyword arguments:
+        scene -- the target grahic scene from qt
+        &#34;&#34;&#34;
+        QGraphicsView.__init__(self, scene, parent)
+
+        self.setRenderHints(QPainter.Antialiasing | QPainter.SmoothPixmapTransform)
+        self.startPos = None
+
+    def wheelEvent(self, event):
+        &#34;&#34;&#34;Zoom if the mouse wheel changes.
+
+        Keyword arguments:
+        event -- the mouse wheel event from qt
+        &#34;&#34;&#34;
+        scaleFactor = 1.2
+        if event.angleDelta().y() &gt; 0:
+            self.scale(scaleFactor, scaleFactor)  # Zoom in
+        else:
+            self.scale(1.0 / scaleFactor, 1.0 / scaleFactor)  # Zooming out
+        super(GraphicsView, self).wheelEvent(event)
+
+    def mousePressEvent(self, event):
+        &#34;&#34;&#34;Grab the position of the mouse.
+
+        Keyword arguments:
+        event -- the mouse press event from qt
+        &#34;&#34;&#34;
+        grabKey = event.modifiers() &amp; Qt.ControlModifier \
+            and event.button() == Qt.LeftButton \
+            or event.button() == Qt.MiddleButton
+        if grabKey:
+            self.startPos = event.pos()  # store the origin point
+        else:
+            super(GraphicsView, self).mousePressEvent(event)
+
+    def mouseMoveEvent(self, event):
+        &#34;&#34;&#34;Move view when mouse is dragged.
+
+        Keyword arguments:
+        event -- the mouse move event from qt
+        &#34;&#34;&#34;
+        if self.startPos is not None:
+            delta = self.startPos - event.pos()
+            transform = self.transform()
+            deltaX = delta.x() / transform.m11()
+            deltaY = delta.y() / transform.m22()
+            self.setSceneRect(self.sceneRect().translated(deltaX, deltaY))
+            self.startPos = event.pos()
+        else:
+            super(GraphicsView, self).mouseMoveEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        &#34;&#34;&#34;Reset start pos when the mouse is released.
+
+        Keyword arguments:
+        event -- the mouse release event from qt
+        &#34;&#34;&#34;
+        self.startPos = None
+        super(GraphicsView, self).mouseReleaseEvent(event)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QGraphicsView</li>
+<li>PyQt5.QtWidgets.QAbstractScrollArea</li>
+<li>PyQt5.QtWidgets.QFrame</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="path_panning.main.GraphicsView.mouseMoveEvent"><code class="name flex">
+<span>def <span class="ident">mouseMoveEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Move view when mouse is dragged.</p>
+<p>Keyword arguments:
+event &ndash; the mouse move event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mouseMoveEvent(self, event):
+    &#34;&#34;&#34;Move view when mouse is dragged.
+
+    Keyword arguments:
+    event -- the mouse move event from qt
+    &#34;&#34;&#34;
+    if self.startPos is not None:
+        delta = self.startPos - event.pos()
+        transform = self.transform()
+        deltaX = delta.x() / transform.m11()
+        deltaY = delta.y() / transform.m22()
+        self.setSceneRect(self.sceneRect().translated(deltaX, deltaY))
+        self.startPos = event.pos()
+    else:
+        super(GraphicsView, self).mouseMoveEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsView.mousePressEvent"><code class="name flex">
+<span>def <span class="ident">mousePressEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Grab the position of the mouse.</p>
+<p>Keyword arguments:
+event &ndash; the mouse press event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mousePressEvent(self, event):
+    &#34;&#34;&#34;Grab the position of the mouse.
+
+    Keyword arguments:
+    event -- the mouse press event from qt
+    &#34;&#34;&#34;
+    grabKey = event.modifiers() &amp; Qt.ControlModifier \
+        and event.button() == Qt.LeftButton \
+        or event.button() == Qt.MiddleButton
+    if grabKey:
+        self.startPos = event.pos()  # store the origin point
+    else:
+        super(GraphicsView, self).mousePressEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsView.mouseReleaseEvent"><code class="name flex">
+<span>def <span class="ident">mouseReleaseEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reset start pos when the mouse is released.</p>
+<p>Keyword arguments:
+event &ndash; the mouse release event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mouseReleaseEvent(self, event):
+    &#34;&#34;&#34;Reset start pos when the mouse is released.
+
+    Keyword arguments:
+    event -- the mouse release event from qt
+    &#34;&#34;&#34;
+    self.startPos = None
+    super(GraphicsView, self).mouseReleaseEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.GraphicsView.wheelEvent"><code class="name flex">
+<span>def <span class="ident">wheelEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Zoom if the mouse wheel changes.</p>
+<p>Keyword arguments:
+event &ndash; the mouse wheel event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def wheelEvent(self, event):
+    &#34;&#34;&#34;Zoom if the mouse wheel changes.
+
+    Keyword arguments:
+    event -- the mouse wheel event from qt
+    &#34;&#34;&#34;
+    scaleFactor = 1.2
+    if event.angleDelta().y() &gt; 0:
+        self.scale(scaleFactor, scaleFactor)  # Zoom in
+    else:
+        self.scale(1.0 / scaleFactor, 1.0 / scaleFactor)  # Zooming out
+    super(GraphicsView, self).wheelEvent(event)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="path_panning.main.NodeTagVisualization"><code class="flex name class">
+<span>class <span class="ident">NodeTagVisualization</span></span>
+<span>(</span><span>node)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>UI Element for map node IDs.</p>
+<p>Initialize values of node tag ids.</p>
+<p>Keyword arguments:
+node &ndash; the node from the map structure</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NodeTagVisualization(QGraphicsTextItem):
+    &#34;&#34;&#34;UI Element for map node IDs.&#34;&#34;&#34;
+
+    def __init__(self, node):
+        &#34;&#34;&#34;Initialize values of node tag ids.
+
+        Keyword arguments:
+        node -- the node from the map structure
+        &#34;&#34;&#34;
+        QGraphicsEllipseItem.__init__(self, str(node.id))
+
+        self.setPos(node.xPos - self.boundingRect().width() / 2,
+                    node.yPos - self.boundingRect().height() / 2)
+        self.setDefaultTextColor(QColor(0, 0, 0, 255))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QGraphicsTextItem</li>
+<li>PyQt5.QtWidgets.QGraphicsObject</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>PyQt5.QtWidgets.QGraphicsItem</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+</dd>
+<dt id="path_panning.main.NodeVisualization"><code class="flex name class">
+<span>class <span class="ident">NodeVisualization</span></span>
+<span>(</span><span>node, radius, pathSelectedCallback)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>UI Element for visualizing nodes.</p>
+<p>Initialize the Node UI Element.</p>
+<p>Keyword arguments:
+node &ndash; the node of the map structure
+radius &ndash; the radius of the rendered circle
+pathSelectedCallback &ndash; mouse press callback for selecting the node</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NodeVisualization(QGraphicsEllipseItem):
+    &#34;&#34;&#34;UI Element for visualizing nodes.&#34;&#34;&#34;
+
+    # Variables for selecting the target path
+    selectedStartNodeId = -1
+    selectedEndNodeId = -1
+
+    def __init__(self, node, radius, pathSelectedCallback):
+        &#34;&#34;&#34;Initialize the Node UI Element.
+
+        Keyword arguments:
+        node -- the node of the map structure
+        radius -- the radius of the rendered circle
+        pathSelectedCallback -- mouse press callback for selecting the node
+        &#34;&#34;&#34;
+        QGraphicsEllipseItem.__init__(
+            self, node.xPos - radius,
+            node.yPos - radius,
+            radius * 2, radius * 2)
+
+        self.node = node
+        self.setBrush(QBrush(QColor(255, 255, 0, 255)))  # Fill color
+        self.setPen(QColor(0, 0, 0, 255))  # Border color
+        self.pathSelectedCallback = pathSelectedCallback
+
+    def mousePressEvent(self, event):
+        &#34;&#34;&#34;Select target path on mouse press.
+
+        Keyword arguments:
+        event -- the mouse press event from qt
+        &#34;&#34;&#34;
+        if event.button() != Qt.LeftButton:
+            return
+        if NodeVisualization.selectedStartNodeId == -1:
+            NodeVisualization.selectedStartNodeId = self.node.id
+            self.setBrush(QBrush(QColor(255, 0, 0, 255)))    # Fill color
+            return
+        elif NodeVisualization.selectedEndNodeId == -1:
+            NodeVisualization.selectedEndNodeId = self.node.id
+            self.pathSelectedCallback(
+                NodeVisualization.selectedStartNodeId,
+                NodeVisualization.selectedEndNodeId)
+            return
+        else:
+            NodeVisualization.selectedStartNodeId = -1
+            NodeVisualization.selectedEndNodeId = -1
+            self.mousePressEvent(event)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QGraphicsEllipseItem</li>
+<li>PyQt5.QtWidgets.QAbstractGraphicsShapeItem</li>
+<li>PyQt5.QtWidgets.QGraphicsItem</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="path_panning.main.NodeVisualization.selectedEndNodeId"><code class="name">var <span class="ident">selectedEndNodeId</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="path_panning.main.NodeVisualization.selectedStartNodeId"><code class="name">var <span class="ident">selectedStartNodeId</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="path_panning.main.NodeVisualization.mousePressEvent"><code class="name flex">
+<span>def <span class="ident">mousePressEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Select target path on mouse press.</p>
+<p>Keyword arguments:
+event &ndash; the mouse press event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mousePressEvent(self, event):
+    &#34;&#34;&#34;Select target path on mouse press.
+
+    Keyword arguments:
+    event -- the mouse press event from qt
+    &#34;&#34;&#34;
+    if event.button() != Qt.LeftButton:
+        return
+    if NodeVisualization.selectedStartNodeId == -1:
+        NodeVisualization.selectedStartNodeId = self.node.id
+        self.setBrush(QBrush(QColor(255, 0, 0, 255)))    # Fill color
+        return
+    elif NodeVisualization.selectedEndNodeId == -1:
+        NodeVisualization.selectedEndNodeId = self.node.id
+        self.pathSelectedCallback(
+            NodeVisualization.selectedStartNodeId,
+            NodeVisualization.selectedEndNodeId)
+        return
+    else:
+        NodeVisualization.selectedStartNodeId = -1
+        NodeVisualization.selectedEndNodeId = -1
+        self.mousePressEvent(event)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="path_panning.main.Window"><code class="flex name class">
+<span>class <span class="ident">Window</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main window of the pathplanner application.</p>
+<p>Initialize the main window.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Window(QMainWindow):
+    &#34;&#34;&#34;Main window of the pathplanner application.&#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34;Initialize the main window.&#34;&#34;&#34;
+        super().__init__()
+
+        self.mapGraph = None
+        self.title = &#39;Pathplanner&#39;
+        self.setWindowTitle(self.title)
+        self.setGeometry(100, 100, 1200, 800)
+
+        # Create grahic view/scene
+        self.scene = GraphicsScene(self.pathSelectedCallback)
+        self.graphicView = GraphicsView(self.scene, self)
+
+        self.selectedAlgorithm = None
+        self.selectableAlgorithms = [&#39;A Star&#39;, &#39;Dijkstra&#39;, &#39;Floyd-Warshall&#39;]
+
+        # Algorithm solver classes
+        self.floydWarshall = FloydWarshallAlgo()
+        self.dijkstra = DijkstraAlgo()
+        self.astar = AStarAlgo()
+
+        # creating menu bar
+        self.createMainMenu()
+        self.show()
+
+    def createMainMenu(self):
+        &#34;&#34;&#34;Generate the main menu of the window.&#34;&#34;&#34;
+        mainMenu = self.menuBar()
+        fileMenu = mainMenu.addMenu(&#39;File&#39;)
+
+        # Create action for loading maps
+        loadAction = QAction(&#39;Load&#39;, self)
+        loadAction.setShortcut(&#39;Ctrl + L&#39;)
+        fileMenu.addAction(loadAction)
+        loadAction.triggered.connect(self.openFileNameDialog)
+
+        # Create action for exporting images
+        saveAction = QAction(&#39;Export Image&#39;, self)
+        saveAction.setShortcut(&#39;Ctrl + S&#39;)
+        fileMenu.addAction(saveAction)
+        saveAction.triggered.connect(self.exportAsImage)
+
+        # Create menu with a checkable list for algorithms
+        self.algorithmsMenu = mainMenu.addMenu(&#39;Algorithms&#39;)
+        self.algorithmsMenu.triggered.connect(self.changeAlgorithm)
+
+        for i in range(0, len(self.selectableAlgorithms)):
+            algoAction = self.algorithmsMenu.addAction(
+                self.selectableAlgorithms[i])
+            algoAction.setCheckable(True)
+            if i == 0:
+                algoAction.setChecked(True)
+                self.selectedAlgorithm = self.selectableAlgorithms[i]
+
+    def changeAlgorithm(self, action):
+        &#34;&#34;&#34;Change the selected algorithm.&#34;&#34;&#34;
+        for a in self.algorithmsMenu.actions():
+            if a.text() != action.text():
+                a.setChecked(False)
+        self.selectedAlgorithm = action.text()
+
+    def exportAsImage(self):
+        &#34;&#34;&#34;Export graphic view as image (.png).&#34;&#34;&#34;
+        pixmap = QPixmap(self.graphicView.viewport().size())
+        self.graphicView.viewport().render(pixmap)
+
+        name = QFileDialog.getSaveFileName(self, &#39;Save File&#39;, &#39;&#39;, &#39;(*.png)&#39;)
+        pixmap.save(name[0])
+
+    def openFileNameDialog(self):
+        &#34;&#34;&#34;Get location of a map file and open the map.&#34;&#34;&#34;
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(
+            self,
+            &#39;Open map file&#39;, &#39;&#39;,
+            &#39;Map Files (*.txt)&#39;,
+            options=options)
+        if fileName:
+            mapParser = MapParser()
+            try:
+                self.mapGraph = mapParser.ParseMapData(fileName)
+            except AssertionError:
+                _, _, tb = sys.exc_info()
+                traceback.print_tb(tb)  # Fixed format
+                tb_info = traceback.extract_tb(tb)
+                filename, line, func, text = tb_info[-1]
+                print(f&#39;Error occurred on line {line} in map parser: {text}&#39;)
+                return
+            self.scene.setMap(self.mapGraph)
+
+    def resizeEvent(self, event):
+        &#34;&#34;&#34;Resize graphic view.
+
+        Keyword arguments:
+        event -- the window resize event from qt
+        &#34;&#34;&#34;
+        self.graphicView.setGeometry(
+            0, 0,
+            self.frameGeometry().width(),
+            self.frameGeometry().height())
+
+    def keyPressEvent(self, event):
+        &#34;&#34;&#34;React to keyboard input.
+
+        Keyword arguments:
+        event -- the key press event from qt
+        &#34;&#34;&#34;
+        # Switch between fullscreen and windowed mode
+        if event.key() == QtCore.Qt.Key_F11 or event.key() == QtCore.Qt.Key_F:
+            if self.isFullScreen():
+                self.showNormal()
+            else:
+                self.showFullScreen()
+        # Re-render the map on escape key
+        if event.key() == QtCore.Qt.Key_Escape:
+            self.scene.renderMap()
+
+    def pathSelectedCallback(self, startId, endId):
+        &#34;&#34;&#34;Run the path planning when both nodes are selected.
+
+        It finds the shortest path between startId and endID with
+        the selected algorithm.
+
+        Keyword arguments:
+        startId -- the start node identifier
+        endId -- the end node identifier
+        &#34;&#34;&#34;
+        if self.selectedAlgorithm == &#39;A Star&#39;:
+            # Measure time as well
+            path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+                self.astar.solveAlgoritm, startId, endId, self.mapGraph)
+
+            if path is None:
+                infoText = &#39;No path found. (A* took %d micro seconds)&#39;
+            else:
+                infoText = &#39;A* took %d micro seconds to find a path.&#39;
+
+            self.scene.highLightPath(path, infoText % (elapsedTime))
+        elif self.selectedAlgorithm == &#39;Dijkstra&#39;:
+            # Measure time as well
+            path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+                self.dijkstra.solveAlgoritm, startId, endId, self.mapGraph)
+
+            if path is None:
+                infoText = &#39;No path found. (Dijkstra took %d micro seconds)&#39;
+            else:
+                infoText = &#39;Dijkstra took %d micro seconds to find a path.&#39;
+
+            self.scene.highLightPath(path, infoText % (elapsedTime))
+        elif self.selectedAlgorithm == &#39;Floyd-Warshall&#39;:
+            # Measure time as well
+            path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+                self.floydWarshall.solveAlgoritm,
+                startId, endId,
+                self.mapGraph)
+
+            if path is None:
+                infoText = &#39;No path found. (Floyd Warshall took %d micro seconds)&#39;
+            else:
+                infoText = &#39;Floyd Warshall took %d micro seconds to find a path.&#39;
+
+            self.scene.highLightPath(path, infoText % (elapsedTime))
+        else:
+            # TODO: ADD OTHER ALGORITHMS HERE
+            infoText = &#39;Algorithm not implemented&#39;
+            print(infoText)
+            self.scene.highLightPath([], infoText)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QMainWindow</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="path_panning.main.Window.changeAlgorithm"><code class="name flex">
+<span>def <span class="ident">changeAlgorithm</span></span>(<span>self, action)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Change the selected algorithm.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def changeAlgorithm(self, action):
+    &#34;&#34;&#34;Change the selected algorithm.&#34;&#34;&#34;
+    for a in self.algorithmsMenu.actions():
+        if a.text() != action.text():
+            a.setChecked(False)
+    self.selectedAlgorithm = action.text()</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.Window.createMainMenu"><code class="name flex">
+<span>def <span class="ident">createMainMenu</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate the main menu of the window.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def createMainMenu(self):
+    &#34;&#34;&#34;Generate the main menu of the window.&#34;&#34;&#34;
+    mainMenu = self.menuBar()
+    fileMenu = mainMenu.addMenu(&#39;File&#39;)
+
+    # Create action for loading maps
+    loadAction = QAction(&#39;Load&#39;, self)
+    loadAction.setShortcut(&#39;Ctrl + L&#39;)
+    fileMenu.addAction(loadAction)
+    loadAction.triggered.connect(self.openFileNameDialog)
+
+    # Create action for exporting images
+    saveAction = QAction(&#39;Export Image&#39;, self)
+    saveAction.setShortcut(&#39;Ctrl + S&#39;)
+    fileMenu.addAction(saveAction)
+    saveAction.triggered.connect(self.exportAsImage)
+
+    # Create menu with a checkable list for algorithms
+    self.algorithmsMenu = mainMenu.addMenu(&#39;Algorithms&#39;)
+    self.algorithmsMenu.triggered.connect(self.changeAlgorithm)
+
+    for i in range(0, len(self.selectableAlgorithms)):
+        algoAction = self.algorithmsMenu.addAction(
+            self.selectableAlgorithms[i])
+        algoAction.setCheckable(True)
+        if i == 0:
+            algoAction.setChecked(True)
+            self.selectedAlgorithm = self.selectableAlgorithms[i]</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.Window.exportAsImage"><code class="name flex">
+<span>def <span class="ident">exportAsImage</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Export graphic view as image (.png).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exportAsImage(self):
+    &#34;&#34;&#34;Export graphic view as image (.png).&#34;&#34;&#34;
+    pixmap = QPixmap(self.graphicView.viewport().size())
+    self.graphicView.viewport().render(pixmap)
+
+    name = QFileDialog.getSaveFileName(self, &#39;Save File&#39;, &#39;&#39;, &#39;(*.png)&#39;)
+    pixmap.save(name[0])</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.Window.keyPressEvent"><code class="name flex">
+<span>def <span class="ident">keyPressEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>React to keyboard input.</p>
+<p>Keyword arguments:
+event &ndash; the key press event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def keyPressEvent(self, event):
+    &#34;&#34;&#34;React to keyboard input.
+
+    Keyword arguments:
+    event -- the key press event from qt
+    &#34;&#34;&#34;
+    # Switch between fullscreen and windowed mode
+    if event.key() == QtCore.Qt.Key_F11 or event.key() == QtCore.Qt.Key_F:
+        if self.isFullScreen():
+            self.showNormal()
+        else:
+            self.showFullScreen()
+    # Re-render the map on escape key
+    if event.key() == QtCore.Qt.Key_Escape:
+        self.scene.renderMap()</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.Window.openFileNameDialog"><code class="name flex">
+<span>def <span class="ident">openFileNameDialog</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get location of a map file and open the map.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openFileNameDialog(self):
+    &#34;&#34;&#34;Get location of a map file and open the map.&#34;&#34;&#34;
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    fileName, _ = QFileDialog.getOpenFileName(
+        self,
+        &#39;Open map file&#39;, &#39;&#39;,
+        &#39;Map Files (*.txt)&#39;,
+        options=options)
+    if fileName:
+        mapParser = MapParser()
+        try:
+            self.mapGraph = mapParser.ParseMapData(fileName)
+        except AssertionError:
+            _, _, tb = sys.exc_info()
+            traceback.print_tb(tb)  # Fixed format
+            tb_info = traceback.extract_tb(tb)
+            filename, line, func, text = tb_info[-1]
+            print(f&#39;Error occurred on line {line} in map parser: {text}&#39;)
+            return
+        self.scene.setMap(self.mapGraph)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.Window.pathSelectedCallback"><code class="name flex">
+<span>def <span class="ident">pathSelectedCallback</span></span>(<span>self, startId, endId)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Run the path planning when both nodes are selected.</p>
+<p>It finds the shortest path between startId and endID with
+the selected algorithm.</p>
+<p>Keyword arguments:
+startId &ndash; the start node identifier
+endId &ndash; the end node identifier</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pathSelectedCallback(self, startId, endId):
+    &#34;&#34;&#34;Run the path planning when both nodes are selected.
+
+    It finds the shortest path between startId and endID with
+    the selected algorithm.
+
+    Keyword arguments:
+    startId -- the start node identifier
+    endId -- the end node identifier
+    &#34;&#34;&#34;
+    if self.selectedAlgorithm == &#39;A Star&#39;:
+        # Measure time as well
+        path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+            self.astar.solveAlgoritm, startId, endId, self.mapGraph)
+
+        if path is None:
+            infoText = &#39;No path found. (A* took %d micro seconds)&#39;
+        else:
+            infoText = &#39;A* took %d micro seconds to find a path.&#39;
+
+        self.scene.highLightPath(path, infoText % (elapsedTime))
+    elif self.selectedAlgorithm == &#39;Dijkstra&#39;:
+        # Measure time as well
+        path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+            self.dijkstra.solveAlgoritm, startId, endId, self.mapGraph)
+
+        if path is None:
+            infoText = &#39;No path found. (Dijkstra took %d micro seconds)&#39;
+        else:
+            infoText = &#39;Dijkstra took %d micro seconds to find a path.&#39;
+
+        self.scene.highLightPath(path, infoText % (elapsedTime))
+    elif self.selectedAlgorithm == &#39;Floyd-Warshall&#39;:
+        # Measure time as well
+        path, elapsedTime = PerformanceMeasurement.measureExecutionTime(
+            self.floydWarshall.solveAlgoritm,
+            startId, endId,
+            self.mapGraph)
+
+        if path is None:
+            infoText = &#39;No path found. (Floyd Warshall took %d micro seconds)&#39;
+        else:
+            infoText = &#39;Floyd Warshall took %d micro seconds to find a path.&#39;
+
+        self.scene.highLightPath(path, infoText % (elapsedTime))
+    else:
+        # TODO: ADD OTHER ALGORITHMS HERE
+        infoText = &#39;Algorithm not implemented&#39;
+        print(infoText)
+        self.scene.highLightPath([], infoText)</code></pre>
+</details>
+</dd>
+<dt id="path_panning.main.Window.resizeEvent"><code class="name flex">
+<span>def <span class="ident">resizeEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resize graphic view.</p>
+<p>Keyword arguments:
+event &ndash; the window resize event from qt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resizeEvent(self, event):
+    &#34;&#34;&#34;Resize graphic view.
+
+    Keyword arguments:
+    event -- the window resize event from qt
+    &#34;&#34;&#34;
+    self.graphicView.setGeometry(
+        0, 0,
+        self.frameGeometry().width(),
+        self.frameGeometry().height())</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="path_panning" href="index.html">path_panning</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="path_panning.main.main" href="#path_panning.main.main">main</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="path_panning.main.GraphicsScene" href="#path_panning.main.GraphicsScene">GraphicsScene</a></code></h4>
+<ul class="">
+<li><code><a title="path_panning.main.GraphicsScene.convertMapCoordinates" href="#path_panning.main.GraphicsScene.convertMapCoordinates">convertMapCoordinates</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.drawMapEdge" href="#path_panning.main.GraphicsScene.drawMapEdge">drawMapEdge</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.drawMapNode" href="#path_panning.main.GraphicsScene.drawMapNode">drawMapNode</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.highLightPath" href="#path_panning.main.GraphicsScene.highLightPath">highLightPath</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.mousePressEvent" href="#path_panning.main.GraphicsScene.mousePressEvent">mousePressEvent</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.pathSelectedCallback" href="#path_panning.main.GraphicsScene.pathSelectedCallback">pathSelectedCallback</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.renderMap" href="#path_panning.main.GraphicsScene.renderMap">renderMap</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.setMap" href="#path_panning.main.GraphicsScene.setMap">setMap</a></code></li>
+<li><code><a title="path_panning.main.GraphicsScene.setOption" href="#path_panning.main.GraphicsScene.setOption">setOption</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="path_panning.main.GraphicsView" href="#path_panning.main.GraphicsView">GraphicsView</a></code></h4>
+<ul class="">
+<li><code><a title="path_panning.main.GraphicsView.mouseMoveEvent" href="#path_panning.main.GraphicsView.mouseMoveEvent">mouseMoveEvent</a></code></li>
+<li><code><a title="path_panning.main.GraphicsView.mousePressEvent" href="#path_panning.main.GraphicsView.mousePressEvent">mousePressEvent</a></code></li>
+<li><code><a title="path_panning.main.GraphicsView.mouseReleaseEvent" href="#path_panning.main.GraphicsView.mouseReleaseEvent">mouseReleaseEvent</a></code></li>
+<li><code><a title="path_panning.main.GraphicsView.wheelEvent" href="#path_panning.main.GraphicsView.wheelEvent">wheelEvent</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="path_panning.main.NodeTagVisualization" href="#path_panning.main.NodeTagVisualization">NodeTagVisualization</a></code></h4>
+</li>
+<li>
+<h4><code><a title="path_panning.main.NodeVisualization" href="#path_panning.main.NodeVisualization">NodeVisualization</a></code></h4>
+<ul class="">
+<li><code><a title="path_panning.main.NodeVisualization.mousePressEvent" href="#path_panning.main.NodeVisualization.mousePressEvent">mousePressEvent</a></code></li>
+<li><code><a title="path_panning.main.NodeVisualization.selectedEndNodeId" href="#path_panning.main.NodeVisualization.selectedEndNodeId">selectedEndNodeId</a></code></li>
+<li><code><a title="path_panning.main.NodeVisualization.selectedStartNodeId" href="#path_panning.main.NodeVisualization.selectedStartNodeId">selectedStartNodeId</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="path_panning.main.Window" href="#path_panning.main.Window">Window</a></code></h4>
+<ul class="">
+<li><code><a title="path_panning.main.Window.changeAlgorithm" href="#path_panning.main.Window.changeAlgorithm">changeAlgorithm</a></code></li>
+<li><code><a title="path_panning.main.Window.createMainMenu" href="#path_panning.main.Window.createMainMenu">createMainMenu</a></code></li>
+<li><code><a title="path_panning.main.Window.exportAsImage" href="#path_panning.main.Window.exportAsImage">exportAsImage</a></code></li>
+<li><code><a title="path_panning.main.Window.keyPressEvent" href="#path_panning.main.Window.keyPressEvent">keyPressEvent</a></code></li>
+<li><code><a title="path_panning.main.Window.openFileNameDialog" href="#path_panning.main.Window.openFileNameDialog">openFileNameDialog</a></code></li>
+<li><code><a title="path_panning.main.Window.pathSelectedCallback" href="#path_panning.main.Window.pathSelectedCallback">pathSelectedCallback</a></code></li>
+<li><code><a title="path_panning.main.Window.resizeEvent" href="#path_panning.main.Window.resizeEvent">resizeEvent</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

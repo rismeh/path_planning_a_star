@@ -1,0 +1,170 @@
+************* Module smec_path_planning.smec_path
+smec_path.py:65:40: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:67:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:73:0: C0301: Line too long (104/100) (line-too-long)
+smec_path.py:76:74: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:80:38: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:83:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:88:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:91:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:95:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:108:72: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:130:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:133:36: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:135:43: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:144:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:151:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:152:90: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:164:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:173:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:177:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:183:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:188:33: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:191:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:196:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:203:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:205:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:216:0: C0304: Final newline missing (missing-final-newline)
+smec_path.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+smec_path.py:6:0: E0401: Unable to import 'marvelmind_interfaces.msg' (import-error)
+smec_path.py:8:0: E0401: Unable to import 'numpy' (import-error)
+smec_path.py:10:0: E0401: Unable to import 'map_graph' (import-error)
+smec_path.py:12:0: E0401: Unable to import 'map_parser' (import-error)
+smec_path.py:13:0: E0401: Unable to import 'a_star' (import-error)
+smec_path.py:59:0: C0115: Missing class docstring (missing-class-docstring)
+smec_path.py:59:0: C0103: Class name "Publisher_Path" doesn't conform to PascalCase naming style (invalid-name)
+smec_path.py:80:4: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:114:8: E1111: Assigning result of a function call, where the function has no return (assignment-from-no-return)
+smec_path.py:114:8: W0612: Unused variable 'publisher' (unused-variable)
+smec_path.py:118:4: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:118:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+smec_path.py:132:4: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:146:4: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:146:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+smec_path.py:153:4: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:155:8: C0103: Variable name "mapParser" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:157:8: C0103: Variable name "graphMap" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:159:12: C0103: Variable name "AStar" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:166:4: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:175:4: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:207:0: C0116: Missing function or method docstring (missing-function-docstring)
+smec_path.py:2:0: C0411: standard import "import math" should be placed before "import rclpy" (wrong-import-order)
+smec_path.py:7:0: C0411: standard import "import time" should be placed before "import rclpy" (wrong-import-order)
+smec_path.py:2:0: W0611: Unused import math (unused-import)
+smec_path.py:4:0: W0611: Unused String imported from std_msgs.msg (unused-import)
+smec_path.py:4:0: W0611: Unused Float32 imported from std_msgs.msg (unused-import)
+smec_path.py:4:0: W0611: Unused UInt16 imported from std_msgs.msg (unused-import)
+smec_path.py:7:0: W0611: Unused import time (unused-import)
+smec_path.py:10:0: W0611: Unused MapGraph imported from map_graph (unused-import)
+
+
+Report
+======
+118 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |1          |=          |0.00        |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+|method   |8      |8          |=          |12.50       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+218 lines have been analyzed
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |154    |70.64 |154      |=          |
++----------+-------+------+---------+-----------+
+|docstring |0      |0.00  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |27     |12.39 |27       |=          |
++----------+-------+------+---------+-----------+
+|empty     |37     |16.97 |37       |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |0          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |43     |43       |43         |
++-----------+-------+---------+-----------+
+|refactor   |2      |2        |2          |
++-----------+-------+---------+-----------+
+|warning    |7      |7        |7          |
++-----------+-------+---------+-----------+
+|error      |6      |6        |6          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-------------------------------+------------+
+|message id                     |occurrences |
++===============================+============+
+|trailing-whitespace            |25          |
++-------------------------------+------------+
+|missing-function-docstring     |8           |
++-------------------------------+------------+
+|unused-import                  |6           |
++-------------------------------+------------+
+|import-error                   |5           |
++-------------------------------+------------+
+|invalid-name                   |4           |
++-------------------------------+------------+
+|wrong-import-order             |2           |
++-------------------------------+------------+
+|inconsistent-return-statements |2           |
++-------------------------------+------------+
+|unused-variable                |1           |
++-------------------------------+------------+
+|missing-module-docstring       |1           |
++-------------------------------+------------+
+|missing-final-newline          |1           |
++-------------------------------+------------+
+|missing-class-docstring        |1           |
++-------------------------------+------------+
+|line-too-long                  |1           |
++-------------------------------+------------+
+|assignment-from-no-return      |1           |
++-------------------------------+------------+
+
+
+
+
+------------------------------------------------------------------
+Your code has been rated at 3.05/10 (previous run: 3.05/10, +0.00)
+

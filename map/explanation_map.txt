@@ -1,0 +1,28 @@
+% EXPLANATION MAP
+% This is a comment
+
+% The nodes are defined as follows
+% Each one starts with an "n" to identify the line as an node
+% n <x-Position> <y-Position> <Node-Id>
+% Note that each value has to be seperated by a space
+n 576.25 420.63 0
+n 180.50 400.23 1
+n 520.21 162.98 2 
+n 244.55 249.72 3 
+n 592.26 303.29 4 
+n 270.86 531.60 5 
+n 481.32 497.16 6 
+
+% The edges between nodes are defined as follows
+% Each one starts with an "e" to identify the line as an edge
+% e <start-Node-Id> <end-Node-Id> <Edge-Id> <Cost value>
+% Note that each value has to be seperated by a space
+e 1 5 0 222
+e 2 3 1 362
+e 2 4 2 212
+e 5 6 3 245
+e 2 5 4 618
+e 3 1 5 215
+e 4 0 6 133
+e 0 6 7 171
+

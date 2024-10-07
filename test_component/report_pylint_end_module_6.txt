@@ -1,0 +1,21 @@
+************* Module smec_path_planning.smec_path
+smec_path.py:16:13: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:81:0: C0301: Line too long (102/100) (line-too-long)
+smec_path.py:118:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:129:0: C0303: Trailing whitespace (trailing-whitespace)
+smec_path.py:7:0: E0401: Unable to import 'map_parser' (import-error)
+smec_path.py:8:0: E0401: Unable to import 'a_star' (import-error)
+smec_path.py:16:0: C0103: Constant name "epsilon" doesn't conform to UPPER_CASE naming style (invalid-name)
+smec_path.py:55:0: R0902: Too many instance attributes (8/7) (too-many-instance-attributes)
+smec_path.py:123:8: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:143:8: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:150:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+smec_path.py:173:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+smec_path.py:182:8: C0103: Variable name "mapParser" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:184:8: C0103: Variable name "graphMap" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:186:12: C0103: Variable name "AStar" doesn't conform to snake_case naming style (invalid-name)
+smec_path.py:225:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 8.41/10 (previous run: 0.00/10, +8.41)
+
